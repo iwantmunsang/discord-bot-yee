@@ -1,6 +1,9 @@
 import discord
+import os
+
+
 from discord import client 
-token = "OTAwNjk1OTI3MDAwNTYzODEy.YXFEcw.hfYBSsjt188SvHSd0jRMWllOExI"
+token = "access_token"
 clinent = discord.client()
 
 @client._event
@@ -15,4 +18,6 @@ if message.content.startswith("!청소"):
     await message.content.purge(limit=number)
     await message.content.send(f"{number}개의 메세지 삭제 완료!")
 
-client.run("OTAwNjk1OTI3MDAwNTYzODEy.YXFEcw.hfYBSsjt188SvHSd0jRMWllOExI")
+    
+access_token = os.environ["BOT_TOKEN"]
+client.run("access_token")
